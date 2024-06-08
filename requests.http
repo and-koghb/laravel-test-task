@@ -1,0 +1,10 @@
+### Submit
+POST http://laravel-test-task.loc/api/submit
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "test name",
+  "email":"test@example.com",
+  "message": "some test message"
+}
