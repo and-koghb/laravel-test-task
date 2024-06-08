@@ -1,5 +1,36 @@
+#### To be able to install yo'll need to have at least 8.2 version of PHP
+
 # How to install
 
+### Open the terminal and navigate to your projects directory, for example
+`cd /var/www/vhosts`
+
+### Clone the repo and navigate the new created directory
+`git clone https://github.com/and-koghb/laravel-test-task.git`
+
+`cd laravel-test-task`
+
+### Create a MySQL database for the project with charset and collation marked as default in `config/database.php`
+
+### Create `.env` file based on `.env.example`
+
+### Write database credentials in `.env` file
+
+### For local work would be good to create a virtual host `http://laravel-test-task.loc` and write the value as `APP_URL` value in `.env`
+
+### Install packages
+`composer install`
+
+### Run database migrations
+`php artisan migrate`
+
+### Open a new terminal and navigate to the project directory
+`cd /var/www/vhosts/laravel-test-task`
+
+### Run unit and feature tests in the first terminal
+`php artisan test`
+
+### There also is arequests.http file which can help to send requests from your IDE
 
 
 # The task
