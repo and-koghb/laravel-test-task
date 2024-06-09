@@ -10,7 +10,7 @@ use OpenApi\Attributes as OA;
 
 class SubmissionController extends Controller
 {
-    protected $submissionService;
+    protected SubmissionService $submissionService;
 
     public function __construct(SubmissionService $submissionService)
     {
