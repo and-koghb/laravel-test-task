@@ -32,6 +32,14 @@
 
 ### There also is arequests.http file which can help to send requests from your IDE
 
+### To create API documentation you need to run the following command and check the URL `http://laravel-test-task.loc/api/documentation`
+`php artisan l5-swagger:generate`
+
+### To check codes via static analysis tool PHPStan run the command 
+`vendor/bin/phpstan analyse app --level=5`
+
+It may give some error, but think they are allowed in case of Laravel
+
 
 # The task
 

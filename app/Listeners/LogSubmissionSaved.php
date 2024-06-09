@@ -3,17 +3,12 @@
 namespace App\Listeners;
 
 use App\Events\SubmissionSaved;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
 
 class LogSubmissionSaved
 {
     public function handle(SubmissionSaved $event): void
     {
-        Log::info('Submission saved: ', [
-            'name' => $event->submission->name,
-            'email' => $event->submission->email,
-        ]);
+        Log::info('Submission saved: ' . $event->submission->name . ' (' . $event->submission->email . ')');
     }
 }
