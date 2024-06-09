@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\SubmissionProcessingException;
 use App\Http\Requests\SubmissionStoreRequest;
 use App\Services\SubmissionService;
 use Illuminate\Http\JsonResponse;
@@ -71,7 +72,13 @@ class SubmissionController extends Controller
     )]
     public function submit(SubmissionStoreRequest $request): JsonResponse
     {
-        $this->submissionService->processSubmission($request->validated());
+        try {
+            $this->submissionService->processSubmission($request->validated());
+        } catch (SubmissionProcessingException $e) {
+            return response()->json(['error' => 'Error processing submission.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Internal server error.'], 500);
+        }
 
         return response()->json(['message' => 'The submission queued to be processed.'], 200);
     }
