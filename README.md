@@ -79,3 +79,7 @@ b) simple explanation of how to test the API endpoint.
 
 ### Submission Instructions
  Please submit your project as a link to a GitHub repository. Ensure that any necessary setup instructions are included in your README to facilitate the review of your project.
+
+### Additional requirements
+
+Use services, repository and strategy patterns, static analysis tools, create a Swagger documentation.
